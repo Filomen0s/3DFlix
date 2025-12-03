@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./Perfis.module.css"; // caso você use CSS module (opcional)
+import { useNavigate } from "react-router-dom";
 
 function Perfis() {
 
     const [usuarios, setUsuarios] = useState([]);
+    const navigate = useNavigate();
 
     // Carregar perfis do localStorage ao montar o componente
     useEffect(() => {
@@ -13,6 +15,17 @@ function Perfis() {
     function carregarPerfis() {
         const dados = JSON.parse(localStorage.getItem("bancoDados")) || [];
         setUsuarios(Array.isArray(dados) ? dados : []);
+    }
+
+    function selecionarPerfil(perfil) {
+        // Salvar informações do perfil no localStorage
+        localStorage.setItem("perfilAtivo", JSON.stringify({
+            nome: perfil.nome,
+            foto: perfil.foto
+        }));
+        
+        // Redirecionar para Home
+        navigate("/Home");
     }
 
     function deletarPerfil(index) {
@@ -44,12 +57,20 @@ function Perfis() {
 
                 {/* Renderizando perfis existentes */}
                 {usuarios.map((perfil, index) => (
-                    <div key={index} className={`perfil-${index + 1}`}>
+                    <div 
+                        key={index} 
+                        className={`perfil-${index + 1}`}
+                        onClick={() => selecionarPerfil(perfil)}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <img src={perfil.foto} alt={`Perfil ${index + 1}`} />
                         <p>{perfil.nome}</p>
                         <button
                             className={Styles.deleteBtn}
-                            onClick={() => deletarPerfil(index)}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                deletarPerfil(index);
+                            }}
                         >
                             Excluir
                         </button>
