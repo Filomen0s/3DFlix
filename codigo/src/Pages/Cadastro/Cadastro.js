@@ -22,17 +22,31 @@ function Cadastro() {
         alert("As senhas não coincidem. Por favor, tente novamente.");
       }
       else {
+        // Verificar se o email já existe
+        let usuariosCadastrados = JSON.parse(localStorage.getItem("BancoCadastro")) || [];
+        if (!Array.isArray(usuariosCadastrados)) usuariosCadastrados = [];
+
+        const emailExiste = usuariosCadastrados.some(usuario => usuario.email === emailCadastro);
+        if (emailExiste) {
+          alert("Este email já está cadastrado. Por favor, use outro email.");
+          return;
+        }
+
+        // Adicionar novo usuário ao array
+        const novoUsuario = {
+          email: emailCadastro,
+          senha: senhaCadastro
+        };
+
+        usuariosCadastrados.push(novoUsuario);
+        localStorage.setItem("BancoCadastro", JSON.stringify(usuariosCadastrados));
+
         // limpar campos
         document.getElementById("email").value = "";
         document.getElementById("senha").value = "";
         document.getElementById("confirmarSenha").value = "";
 
-        const objetoCadastro = {
-          email: emailCadastro,
-          senha: senhaCadastro
-        };
-
-        localStorage.setItem("BancoCadastro", JSON.stringify(objetoCadastro));
+        alert("Cadastro realizado com sucesso! Faça login para continuar.");
         window.location.href = "/";
       }
     };

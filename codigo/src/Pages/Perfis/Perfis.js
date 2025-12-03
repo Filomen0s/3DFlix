@@ -6,6 +6,8 @@ function Perfis() {
 
     const [usuarios, setUsuarios] = useState([]);
     const navigate = useNavigate();
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    const chavePerfisPorUsuario = `perfis_${usuarioLogado}`;
 
     // Carregar perfis do localStorage ao montar o componente
     useEffect(() => {
@@ -13,7 +15,7 @@ function Perfis() {
     }, []);
 
     function carregarPerfis() {
-        const dados = JSON.parse(localStorage.getItem("bancoDados")) || [];
+        const dados = JSON.parse(localStorage.getItem(chavePerfisPorUsuario)) || [];
         setUsuarios(Array.isArray(dados) ? dados : []);
     }
 
@@ -29,7 +31,7 @@ function Perfis() {
     }
 
     function deletarPerfil(index) {
-        let dados = JSON.parse(localStorage.getItem("bancoDados")) || [];
+        let dados = JSON.parse(localStorage.getItem(chavePerfisPorUsuario)) || [];
         if (!Array.isArray(dados)) dados = [];
 
         if (index < 0 || index >= dados.length) return;
@@ -38,7 +40,7 @@ function Perfis() {
         if (!confirmar) return;
 
         dados.splice(index, 1);
-        localStorage.setItem("bancoDados", JSON.stringify(dados));
+        localStorage.setItem(chavePerfisPorUsuario, JSON.stringify(dados));
         setUsuarios([...dados]);
     }
 

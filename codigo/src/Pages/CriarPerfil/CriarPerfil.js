@@ -16,6 +16,8 @@ function CriarPerfil() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [profileName, setProfileName] = useState("");
   const navigate = useNavigate();
+  const usuarioLogado = localStorage.getItem("usuarioLogado");
+  const chavePerfisPorUsuario = `perfis_${usuarioLogado}`;
 
   const handleSelectImage = (index) => {
     setSelectedImageIndex(index);
@@ -38,7 +40,7 @@ function CriarPerfil() {
       foto: PROFILE_IMAGES[selectedImageIndex],
     };
 
-    let profiles = JSON.parse(localStorage.getItem("bancoDados")) || [];
+    let profiles = JSON.parse(localStorage.getItem(chavePerfisPorUsuario)) || [];
     if (!Array.isArray(profiles)) profiles = [];
 
     if (profiles.length >= 5) {
@@ -47,7 +49,7 @@ function CriarPerfil() {
     }
 
     profiles.push(newProfile);
-    localStorage.setItem("bancoDados", JSON.stringify(profiles));
+    localStorage.setItem(chavePerfisPorUsuario, JSON.stringify(profiles));
 
     // limpar campos
     setProfileName("");

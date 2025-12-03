@@ -12,21 +12,34 @@ function Login() {
       const emailLogin = document.getElementById("email").value;
       const senhaLogin = document.getElementById("senha").value;
 
-      const dadosCadastro = JSON.parse(localStorage.getItem("BancoCadastro"));
-
       if (emailLogin === "" || senhaLogin === "") {
         alert("Por favor, preencha todos os campos.");
-      } 
-      else if (
-        !dadosCadastro ||
-        emailLogin !== dadosCadastro.email ||
-        senhaLogin !== dadosCadastro.senha
-      ) {
-        alert("Email ou senha incorretos. Por favor, tente novamente.");
-      } 
-      else {
-        window.location.href = "/Perfis";
+        return;
       }
+
+      let usuariosCadastrados = JSON.parse(localStorage.getItem("BancoCadastro")) || [];
+      if (!Array.isArray(usuariosCadastrados)) usuariosCadastrados = [];
+
+      // Procurar o usuário no array
+      const usuarioEncontrado = usuariosCadastrados.find(
+        usuario => usuario.email === emailLogin && usuario.senha === senhaLogin
+      );
+
+      if (!usuarioEncontrado) {
+        alert("Email ou senha incorretos. Por favor, tente novamente.");
+        return;
+      }
+
+      // Salvar o email do usuário logado
+      localStorage.setItem("usuarioLogado", emailLogin);
+      
+      // Inicializar localStorage específico do usuário se não existir
+      const chavePerfisPorUsuario = `perfis_${emailLogin}`;
+      if (!localStorage.getItem(chavePerfisPorUsuario)) {
+        localStorage.setItem(chavePerfisPorUsuario, JSON.stringify([]));
+      }
+      
+      window.location.href = "/Perfis";
     };
 
     botao.addEventListener("click", handleLogin);
