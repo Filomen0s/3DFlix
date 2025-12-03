@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+:root{
+    --profile-size: 10%; /* tamanho padrão das imagens de perfil (compatível com CriarPerfil) */
+}
+
+body{
+    background-color: #1F1F1F;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.tituloPagina{
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-family: 'Alex Brush', cursive;
+}
+
+.perfis{
+    display: flex;
+    border: solid 0px blue;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10%;
+    gap: 3%;
+}
+
+.perfil-1, .perfil-2, .perfil-3, .perfil-4, .perfil-5{
+    width: var(--profile-size);
+    height: auto;
+}
+
+.perfil-1, .perfil-2, .perfil-3, .perfil-4, .perfil-5{
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* imagens dentro da área de perfis: ficam com o mesmo tamanho e estilo de CriarPerfil */
+.perfis img {
+    width: 100%; /* 100% do container .perfil-N que tem --profile-size */
+    height: auto;
+    cursor: pointer;
+    border-radius: 50%;
+    border: solid 6px #fff; /* borda em 6px para casar com .addConta */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.addConta{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border-radius: 50%;
+    border: solid 6px #fff; /* borda em 6px para casar com as imagens */
+    background-color: #c4c4c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.criarPerfil{
+    /* aumentar o tamanho do botão de criar perfil em 15% relativo a --profile-size */
+    width: calc(var(--profile-size) * 1.13);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.mais{
+    margin: 0;
+    color: #1F1F1F;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1;
+    display: block;
+}
+
+p{
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* botão de deletar abaixo de cada perfil */
+.deleteBtn{
+    margin-top: 8px;
+    width: 55%; /* usa porcentagem do container .perfil-N */
+    box-sizing: border-box;
+    padding: 5% 0; /* aumentar um pouco a altura do botão (porcentagem) */
+    background: #e53935; /* vermelho sólido mais vivo */
+    color: #ffffff;
+    border: 2px solid #c62828; /* borda em percentual relative to container (px is fine) */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem; /* um pouco maior */
+    font-weight: 700;
+    transition: background-color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+}
+
+.deleteBtn:hover{
+    background: linear-gradient(180deg, #ff2f2f 0%, #c0392b 100%);
+    border-color: #b0312a;
+    transform: translateY(-1px) scale(1.01);
+}
+
+.deleteBtn:active{
+    transform: translateY(0);
+}

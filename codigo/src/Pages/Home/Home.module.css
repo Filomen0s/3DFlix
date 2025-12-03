@@ -1,0 +1,162 @@
+
+main {
+    /* border: 2px solid red; */
+    z-index: 1;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    background-color: #1f1f1f;
+} 
+
+.titulo h2 {
+    font-family: "Alex Brush", cursive;
+    font-size: 84px;
+    font-weight: 300;
+    color: #1f1f1f;
+} .titulo hr {
+    border: 2px solid #1f1f1f;
+    margin-top: -18px;
+}
+
+/* Config Banner */
+.Box_Banner{
+    margin: auto;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 60vh;
+    height: 68vh;
+    background-color: #000;
+    /* border: 3px solid yellowgreen; */
+
+}.Box_Banner img {
+    width: 100%;
+    height: 100%;
+}/* Fim Config Banner */
+
+/* Box Mini Banner */
+.Box_MiniBanner {
+    z-index: 11;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 410px;
+    top: 80px;
+    left: 60vw;
+    /* border: blueviolet solid 3px; */
+}
+
+.MiniBanner{
+    position: relative;
+    border: #f1f1f1 4px solid;
+    height: 300px;
+    width: 500px;
+    
+    box-shadow: 0px 15px 20px #000;
+    background-image: url('../../Components/IMG/VSFD/BgVSFDComprido.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}#btn_play{
+    margin: auto;
+    position: absolute;
+    z-index: 12;
+    height: 50px;
+    width: 50px;
+    top: 80px;
+    left: 190px;
+    
+    color: rgba(212, 212, 212, 0.848);
+    font-size: 120px;
+} 
+.btn_informacoes {
+    border: 2px solid #f1f1f1;
+    background-color: #A10E15;
+    color: #f1f1f1;
+    font-size: 18px;
+    box-shadow: 0px 15px 20px #000;
+
+    display: flex;
+    align-content: center;
+    width: 100%;
+    height: 50px;
+    padding-left: 15px;
+    border-radius: 20px;
+} .btn_informacoes i{
+    margin-top: 15px;
+}.btn_informacoes p {
+    margin: auto;
+    margin-left: 10px;
+} /* Fim Box Mini Banner */
+/* Fim Config Banner */
+
+/* Config Section Sonoplastia */
+.Sonoplastia {
+   background-color: #f1f1f1; 
+   width: 100vw;
+   height: auto;
+} 
+
+.carousel{
+    /* border: 3px solid greenyellow; */
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    overflow-x: auto;
+} .carousel::-webkit-scrollbar {
+    display: none;
+}.carousel:hover .group {
+    animation-play-state: paused; /* Pausa a animação ao passar o mouse */
+} .carousel::scrollbar-button(right) {
+    content: '→';
+    border: none;
+    background-color: #A10E15;
+    font-size: 3em;
+    color: #f1f1f1;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    padding-bottom: .1em;
+    cursor: pointer;
+}
+
+.group {
+    width: auto;
+    display: flex;
+    flex: 0 0 15em;
+    gap: 50px; /* Aumente o espaçamento entre os vídeos */
+    padding: 10px; /* Adicione um espaçamento interno, se necessário */
+    animation: spin 60s infinite linear;
+} .animationDuration {
+    animation: spin 40s infinite linear;
+    
+}
+.group > div {
+    margin: 0 15px; /* Adicione margens laterais aos itens */
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+    from {translate: 0;}
+}
+/* Fim Config Section Sonoplastia */
+
+/* Config Section VideoClipe */
+.VideoClipe {
+    scroll-margin-top: 200px;
+    background-color: #f1f1f1; 
+    width: 100vw;
+    height: auto;
+} /* Fim Config Section VideoClipe */
+
+/* Config Section Teaser e Webséries*/
+.Webseries, .Cortes {
+    background-color: #1f1f1f; 
+    width: 100vw;
+    height: auto;
+} .Webseries .titulo h2, .Cortes .titulo h2{
+    color: #f1f1f1;
+} .Webseries .titulo hr, .Cortes .titulo hr {
+    border: 2px solid #f1f1f1;
+}/* Fim Config Section Teaser e Webséries*/

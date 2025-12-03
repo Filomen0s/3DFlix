@@ -1,0 +1,136 @@
+/* Config do Overlay */
+.janela_modal {
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: none; */
+} .janela_modal.abrir {
+    display: flex;
+} /* Fim Config do Overlay */
+
+/* Config do espaçador e titulo*/
+.espacador {
+    /* border: 3px solid red; */
+    height: 30px;
+} .titulo h2{
+    text-align: center;
+    color: #1f1f1f;
+
+    font-size: 60px;
+    font-weight: 600;
+    font-family: "Overlock", sans-serif;
+} hr {
+    border: 2px solid #A10E15;
+    opacity: 100%;
+} /* Fim Config do espaçador e titulo*/
+
+/* Config Container */
+.janela_modal .container {
+    margin: auto;
+    z-index: 1001;
+    background-color: #f1f1f1;
+    min-width: 600px;
+    width: 60%;
+    height: auto;
+    border: 10px solid #A10E15;
+    border-radius: 50px;
+    transition: ease all .5s;
+} /* Fim Config Container */
+
+/* Config Box Sugestões */
+.box_sugestoes {
+    padding-inline: 10%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+} .box_sugestoes p {
+    font-family: "Overlock", sans-serif;
+    text-align: justify;
+    font-size: 28px;
+    width: 50%;
+}
+
+
+.conteudo{
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+} .Qr_code {
+    border: #A10E15 solid 5px;
+    border-radius: 20px;
+    min-width: 350px;
+    width: 400px;
+    height: 45vh;
+    background-image: url(../IMG/QRcode-3D.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Config button */
+.box_btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}.box_btn button{
+    cursor: pointer;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+
+  background-color: #e1e1e1;
+  color: #1f1f1f;
+  border: 3px solid #A10E15;
+  border-radius: 20px;
+
+  font-size: 18px;
+  font-weight: 600;
+  transition: ease-in-out .3s;
+}.box_btn button:hover{
+    border: 3px solid #570d11;
+    background-color: #A10E15;
+    color: #e1e1e1;
+}/* Fim Config button */
+/* Fim Config Box Sugestões */
+
+/* Animação Modal Sugestões */
+.janela_modal {
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+.container {
+    opacity: 0;
+    animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Fim Animação Modal Sugestões */
+
+

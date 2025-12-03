@@ -1,0 +1,213 @@
+/* Config navbar */
+header {
+    z-index: 900;
+    position: fixed;
+}
+
+.navbar {
+    /* border: 2px solid red; */
+    width: 100vw;
+    height: 100px;
+    padding-inline: 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #1f1f1f;
+    border-bottom: 5px solid #A10E15;
+}
+
+/* Fim Config navbar */
+
+/* Config Box Profile */
+.box_profile {
+    /* border: 3px solid yellow; */
+    cursor: pointer;
+    display: flex;
+    height: 80px;
+    width: 100px;
+
+    align-items: center;
+}
+
+/* Seta */
+.box_profile i {
+    font-size: 24px;
+    color: #f1f1f1;
+    margin-left: 10px;
+
+    transition: transform 0.25s ease;
+    transform-origin: center;
+}
+
+/* Foto Perfil */
+.IMGprofile {
+    /* border: 3px solid red; */
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    background-image: url(../IMG/Fotos-Perfil/PF-Rondonia.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.25s ease;
+    /* opcional: ajusta o ponto de origem se necessário */
+}
+
+/* Fim Config Box Profile */
+
+/* Box Menu */
+.box_menu {
+    /* border: 2px solid blue; */
+    display: flex;
+    margin-left: 50px;
+
+    gap: 50px;
+    font-family: "Overlock", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.box_menu a {
+    /* border: 2px solid #A10E15; */
+    color: #f1f1f1;
+    padding: 5px;
+
+}
+
+.box_menu a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #f1f1f1;
+    transition: width 0.3s;
+    width: 0;
+}
+
+.box_menu a:hover::after {
+    width: 110%;
+}
+
+/* Fim Box Menu */
+
+/* Box Pesquisa */
+.box_PesquisaLogo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+}
+
+.box_Pesquisa {
+    /* border: 3px solid yellow; */
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    /* 40px */
+    height: 40px;
+    left: -40px;
+
+    background-color: transparent;
+    border: 2px transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    transition: .5s;
+}
+
+.box_Pesquisa.ativar {
+    width: 240px;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    margin-left: 40px;
+}
+
+/* Area ao redor do icone lupa */
+.box_Pesquisa .lupa_buscar {
+    /* border: 2px solid #A10E15; */
+    cursor: pointer;
+    width: 40px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+}
+
+/* Icone Lupa */
+.box_Pesquisa .lupa_buscar i {
+    margin: auto;
+    color: #f1f1f1;
+    font-size: 24px;
+}
+
+.box_Pesquisa.ativar i {
+    color: #1f1f1f;
+}
+
+/* Box Input */
+.box_Pesquisa .input_buscar {
+    position: absolute;
+    left: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.box_Pesquisa .input_buscar select {
+    background-color: #f1f1f1;
+    /* border: 5px solid #A10E15; */
+    border: 0;
+    outline: 0;
+    font-size: 12px;
+    width: 60%;
+    font-size: 16px;
+} .box_Pesquisa .input_buscar option {
+    background-color: #f1f1f1;
+}
+
+.box_Pesquisa .btn_fechar {
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    left: 100px;
+
+    /* border: 2px solid #A10E15; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_fechar i {
+    margin: auto;
+    color: #6c6c6c;
+    font-size: 20px;
+}
+
+/* Fim Box Pesquisa */
+
+/* Box logo */
+.Logo {
+    /* border: 4px solid blueviolet; */
+    width: 50px;
+    height: 65px;
+
+    background-image: url(../IMG/Logo3D/Logo-3D-com-borda.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Fim Box logo */
