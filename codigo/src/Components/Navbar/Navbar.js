@@ -3,19 +3,6 @@ import Styles from './Navbar.module.css';
 
 const Navbar = ({ onFeedbackClick }) => {
 
-  // Estado que controla se a busca está ativa (mostra/oculta a caixa de busca)
-  const [isSearchActive, setIsSearchActive] = useState(false);
-
-  // Função que abre a busca (muda o estado para true)
-  const handleSearchClick = () => {
-    setIsSearchActive(true);
-  };
-
-  // Função que fecha a busca (muda o estado para false)
-  const handleCloseClick = () => {
-    setIsSearchActive(false);
-  };
-
   // Estado que controla a rotação do ícone de perfil
   const [isProfileRotated, setIsProfileRotated] = useState(false);
 
@@ -61,35 +48,9 @@ const Navbar = ({ onFeedbackClick }) => {
           {/* Box Pesquisa e Logo */}
           <div className={Styles.box_PesquisaLogo}>
 
-            {/* Box Pesquisa */}
-            <div className={`${Styles.box_Pesquisa} ${isSearchActive ? Styles.ativar : ''}`} id="boxBuscar">
-
-              {/* lupa_buscar: ícone que representa a busca */}
-              <div className={Styles.lupa_buscar} id="lupaBuscar" onClick={handleSearchClick}>
-                <i className="bi bi-search"></i>
-              </div>
-
-              {/* input_buscar: campo de texto para digitar a busca */}
-              <div className={Styles.input_buscar}>
-                  <select>
-                    <option value="" disabled selected>Buscar...</option>
-                    <option value="1"><a>Sonoplastia</a></option>
-                    <option value="2">Videoclipe</option>
-                    <option value="3">Teaser</option>
-                    <option value="4">Cortes</option>
-                    <option value="5">Webséries</option>
-                  </select>
-              </div>
-
-              {/* btn_fechar: botão que fecha a caixa de busca */}
-              <div className={Styles.btn_fechar} id="btnFechar" onClick={handleCloseClick}>
-                <i className="bi bi-x-circle"></i>
-              </div>
-
-            </div> {/* Fim Box Pesquisa */}
-
+          
             {/* Logo: espaço para o logotipo do projeto */}
-            <div className={Styles.Logo}></div>
+            <div className={Styles.Logo} />
 
           </div> {/* Fim Box Pesquisa e Logo */}
 

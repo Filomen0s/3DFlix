@@ -19,8 +19,7 @@ const BaseVideos = ({ Img, Nome }) => {
         
         <h3 className={Styles.NomeDoVideo}>{Nome}</h3>
         
-        <div className='espacador' style={espacadorHeight}></div>
-        <div className={Styles.btn_saibaMais}><i class="bi bi-info-circle"></i><p>Mais Informações</p></div>
+        
       </div>
     </div>
   )

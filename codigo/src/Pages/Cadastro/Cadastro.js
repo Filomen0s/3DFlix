@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import Styles from "./Cadastro.module.css"; // caso você use CSS module (opcional)
 
-import Login from "../Login/Login";
-
 import Logo3DFlix from '../../Components/IMG/Logo3D/DESIGN_3D_1.svg';
+import { div } from "three/tsl";
 
 function Cadastro() {
 
@@ -57,6 +56,7 @@ function Cadastro() {
   }, []);
 
   return (
+    <body className={Styles.body}>
       <section className={Styles.areaCadastro}>
         <img src={Logo3DFlix} alt="Logo 3D Flix" />
 
@@ -72,6 +72,7 @@ function Cadastro() {
 
         <button id="botaoCadastro">Cadastrar</button>
       </section>
+    </body>
   );
 }
 

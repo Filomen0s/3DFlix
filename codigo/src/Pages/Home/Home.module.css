@@ -18,76 +18,7 @@ main {
 }
 
 /* Config Banner */
-.Box_Banner{
-    margin: auto;
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    min-height: 60vh;
-    height: 68vh;
-    background-color: #000;
-    /* border: 3px solid yellowgreen; */
 
-}.Box_Banner img {
-    width: 100%;
-    height: 100%;
-}/* Fim Config Banner */
-
-/* Box Mini Banner */
-.Box_MiniBanner {
-    z-index: 11;
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    width: 500px;
-    height: 410px;
-    top: 80px;
-    left: 60vw;
-    /* border: blueviolet solid 3px; */
-}
-
-.MiniBanner{
-    position: relative;
-    border: #f1f1f1 4px solid;
-    height: 300px;
-    width: 500px;
-    
-    box-shadow: 0px 15px 20px #000;
-    background-image: url('../../Components/IMG/VSFD/BgVSFDComprido.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}#btn_play{
-    margin: auto;
-    position: absolute;
-    z-index: 12;
-    height: 50px;
-    width: 50px;
-    top: 80px;
-    left: 190px;
-    
-    color: rgba(212, 212, 212, 0.848);
-    font-size: 120px;
-} 
-.btn_informacoes {
-    border: 2px solid #f1f1f1;
-    background-color: #A10E15;
-    color: #f1f1f1;
-    font-size: 18px;
-    box-shadow: 0px 15px 20px #000;
-
-    display: flex;
-    align-content: center;
-    width: 100%;
-    height: 50px;
-    padding-left: 15px;
-    border-radius: 20px;
-} .btn_informacoes i{
-    margin-top: 15px;
-}.btn_informacoes p {
-    margin: auto;
-    margin-left: 10px;
-} /* Fim Box Mini Banner */
 /* Fim Config Banner */
 
 /* Config Section Sonoplastia */
@@ -97,48 +28,35 @@ main {
    height: auto;
 } 
 
-.carousel{
+.Carousel{
+    position: relative;
     /* border: 3px solid greenyellow; */
     display: flex;
     width: 100%;
-    padding: 5px;
+    padding: 15px;
     overflow-x: auto;
-} .carousel::-webkit-scrollbar {
+    gap: 30px;
+} .Carousel::-webkit-scrollbar {
     display: none;
-}.carousel:hover .group {
-    animation-play-state: paused; /* Pausa a animação ao passar o mouse */
-} .carousel::scrollbar-button(right) {
-    content: '→';
-    border: none;
+}
+
+.btn_left_sono, .btn_right_sono {
+    position: absolute;
+    top: 103vh;
+    z-index: 15;
     background-color: #A10E15;
-    font-size: 3em;
     color: #f1f1f1;
-    height: 60px;
-    width: 60px;
+    border: none;
     border-radius: 50%;
-    padding-bottom: .1em;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
     cursor: pointer;
 }
-
-.group {
-    width: auto;
-    display: flex;
-    flex: 0 0 15em;
-    gap: 50px; /* Aumente o espaçamento entre os vídeos */
-    padding: 10px; /* Adicione um espaçamento interno, se necessário */
-    animation: spin 60s infinite linear;
-} .animationDuration {
-    animation: spin 40s infinite linear;
-    
-}
-.group > div {
-    margin: 0 15px; /* Adicione margens laterais aos itens */
-}
-
-@keyframes spin {
-    from {translate: 0;}
-    to {translate: -100%;}
-    from {translate: 0;}
+.btn_left_sono {
+    left: 5%;
+} .btn_right_sono {
+    left: 93% ;
 }
 /* Fim Config Section Sonoplastia */
 
@@ -148,7 +66,26 @@ main {
     background-color: #f1f1f1; 
     width: 100vw;
     height: auto;
-} /* Fim Config Section VideoClipe */
+}
+.btn_left_video, .btn_right_video {
+    position: absolute;
+    top: 158vh;
+    z-index: 15;
+    background-color: #A10E15;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.btn_left_video {
+    left: 5%;
+} .btn_right_video {
+    left: 93% ;
+}
+/* Fim Config Section VideoClipe */
 
 /* Config Section Teaser e Webséries*/
 .Webseries, .Cortes {
@@ -160,3 +97,23 @@ main {
 } .Webseries .titulo hr, .Cortes .titulo hr {
     border: 2px solid #f1f1f1;
 }/* Fim Config Section Teaser e Webséries*/
+
+
+.btn_left_cortes, .btn_right_cortes {
+    position: absolute;
+    top: 230vh;
+    z-index: 15;
+    background-color: #A10E15;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.btn_left_cortes {
+    left: 5%;
+} .btn_right_cortes {
+    left: 93% ;
+}

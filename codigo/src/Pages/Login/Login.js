@@ -32,13 +32,13 @@ function Login() {
 
       // Salvar o email do usuário logado
       localStorage.setItem("usuarioLogado", emailLogin);
-      
+
       // Inicializar localStorage específico do usuário se não existir
       const chavePerfisPorUsuario = `perfis_${emailLogin}`;
       if (!localStorage.getItem(chavePerfisPorUsuario)) {
         localStorage.setItem(chavePerfisPorUsuario, JSON.stringify([]));
       }
-      
+
       window.location.href = "/Perfis";
     };
 
@@ -47,21 +47,34 @@ function Login() {
     return () => botao.removeEventListener("click", handleLogin);
   }, []);
 
+  const stylebody = {
+    backgroundImage: '../../Components/IMG/Backgrounds/Background_Login_Cadastro.jpg',
+    backgroundSize: 'cover',
+    height: '100vh',
+    overflow: 'hidden',
+    textalin: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    margin: 'auto'
+  };
   return (
-    <section className={Styles.areaCadastro}>
-      <img src={Logo3DFlix} alt="Logo 3D Flix" />
+    <div className={Styles.body}>
+      <section className={Styles.areaCadastro}>
+        <img src={Logo3DFlix} alt="Logo 3D Flix" />
 
-      <div className={Styles.inputsLogin}>
-        <input id="email" type="email" placeholder="Email" />
-        <input id="senha" type="password" placeholder="Senha" />
-      </div>
+        <div className={Styles.inputsLogin}>
+          <input id="email" type="email" placeholder="Email" />
+          <input id="senha" type="password" placeholder="Senha" />
+        </div>
 
-      <h1 className={Styles.irLogin}>
-        <a href="/Cadastro">Não possui uma conta?</a>
-      </h1>
+        <h1 className={Styles.irLogin}>
+          <a href="/Cadastro">Não possui uma conta?</a>
+        </h1>
 
-      <button id="botaoLogin">Entrar</button>
-    </section>
+        <button id="botaoLogin">Entrar</button>
+      </section>
+    </div>
   );
 }
 

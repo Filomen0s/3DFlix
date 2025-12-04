@@ -25,7 +25,7 @@ function Perfis() {
             nome: perfil.nome,
             foto: perfil.foto
         }));
-        
+
         // Redirecionar para Home
         navigate("/Home");
     }
@@ -49,48 +49,51 @@ function Perfis() {
         // ajuste o caminho conforme seu router
     }
 
+
     return (
-        <div>
-            <div className={Styles.tituloPagina}>
-                <h1>Quem está assistindo?</h1>
-            </div>
+        <body className={Styles.bodyPerfis}>
+            <div>
+                <div className={Styles.tituloPagina}>
+                    <h1>Quem está assistindo?</h1>
+                </div>
 
-            <div className={Styles.perfis}>
+                <div className={Styles.perfis}>
 
-                {/* Renderizando perfis existentes */}
-                {usuarios.map((perfil, index) => (
-                    <div 
-                        key={index} 
-                        className={`perfil-${index + 1}`}
-                        onClick={() => selecionarPerfil(perfil)}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        <img src={perfil.foto} alt={`Perfil ${index + 1}`} />
-                        <p>{perfil.nome}</p>
-                        <button
-                            className={Styles.deleteBtn}
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                deletarPerfil(index);
-                            }}
+                    {/* Renderizando perfis existentes */}
+                    {usuarios.map((perfil, index) => (
+                        <div
+                            key={index}
+                            className={`perfil-${index + 1}`}
+                            onClick={() => selecionarPerfil(perfil)}
+                            style={{ cursor: 'pointer' }}
                         >
-                            Excluir
-                        </button>
-                    </div>
-                ))}
-
-                {/* Botão Criar Perfil (só aparece se tiver menos de 5) */}
-                {usuarios.length < 5 && (
-                    <div id="criarPerfil" className={Styles.criarPerfil} onClick={irParaCriarPerfil}>
-                        <div id="btn" className={Styles.addConta}>
-                            <p className={Styles.mais}>+</p>
+                            <img src={perfil.foto} alt={`Perfil ${index + 1}`} />
+                            <p>{perfil.nome}</p>
+                            <button
+                                className={Styles.deleteBtn}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    deletarPerfil(index);
+                                }}
+                            >
+                                Excluir
+                            </button>
                         </div>
-                        <p>Criar perfil</p>
-                    </div>
-                )}
+                    ))}
 
+                    {/* Botão Criar Perfil (só aparece se tiver menos de 5) */}
+                    {usuarios.length < 5 && (
+                        <div id="criarPerfil" className={Styles.criarPerfil} onClick={irParaCriarPerfil}>
+                            <div id="btn" className={Styles.addConta}>
+                                <p className={Styles.mais}>+</p>
+                            </div>
+                            <p>Criar perfil</p>
+                        </div>
+                    )}
+
+                </div>
             </div>
-        </div>
+        </body>
     );
 }
 

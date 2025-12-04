@@ -4,8 +4,9 @@
     --profile-size: 10%; /* tamanho padrão das imagens de perfil (compatível com CriarPerfil) */
 }
 
-body{
+.bodyPerfis{
     background-color: #1F1F1F;
+    background-image: none;
     text-align: center;
     align-items: center;
     align-content: center;
@@ -27,7 +28,7 @@ body{
     align-content: center;
     justify-content: center;
     margin-top: 10%;
-    gap: 3%;
+    gap: 40px;
 }
 
 .perfil-1, .perfil-2, .perfil-3, .perfil-4, .perfil-5{
@@ -58,7 +59,7 @@ body{
 }
 
 .addConta{
-    width: 100%;
+    width: 189px;
     aspect-ratio: 1 / 1;
     cursor: pointer;
     border-radius: 50%;

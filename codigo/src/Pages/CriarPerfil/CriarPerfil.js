@@ -62,8 +62,21 @@ function CriarPerfil() {
     navigate("/Perfis");
   };
 
+  const stylebody = {
+    backgroundColor: '#1F1F1F',
+    backgroundImage: 'none',
+    height: '100vh',
+    overflow: 'hidden',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    margin: 'auto',
+
+    marginTop: '-100px',
+  };
   return (
-    <>
+    <div style={stylebody}>
       <div className={Styles.tituloFotos}>
         <h1>Foto do perfil</h1>
       </div>
@@ -98,7 +111,7 @@ function CriarPerfil() {
         <button onClick={handleSaveProfile} className={Styles.salvar}>Salvar</button>
         <button onClick={handleCancel} className={Styles.cancelar}>Cancelar</button>
       </div>
-    </>
+    </div>
   );
 }
 

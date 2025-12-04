@@ -1,16 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 
 :root{
-    --profile-size: 10%; /* tamanho padrão das imagens de perfil */
-}
-
-body {
-    background-color: #1F1F1F;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin: auto;
+    --profile-size: 160px; /* tamanho padrão das imagens de perfil */
 }
 
 .tituloFotos {
@@ -83,6 +74,7 @@ body {
     margin-bottom: 1%;
     background-color: #A10E15;
     transition: 0.3s;
+    color: #f1f1f1;
 }
 
 .salvar:hover {

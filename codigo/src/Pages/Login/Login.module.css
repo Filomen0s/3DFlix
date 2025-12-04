@@ -1,8 +1,12 @@
-.bodyBg {
+.body{
     background-image: url(../../Components/IMG/background.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: fixed;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+
+    margin-top: -100px;
 }
 
 a {

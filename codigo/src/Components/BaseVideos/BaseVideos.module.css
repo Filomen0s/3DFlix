@@ -2,7 +2,7 @@
 .Box_BaseVideos {
     cursor: pointer;
     z-index: 1;
-    border: 2px solid blueviolet;
+    /* border: 2px solid blueviolet; */
     position: relative;
     display: block;
     width: 400px;
@@ -10,7 +10,6 @@
     transition: ease-in-out .5s ;
 }.Box_BaseVideos:hover {
     scale: calc(1.05);
-    height: 320px;
 }
 
 /* Capa do Video */
