@@ -56,7 +56,7 @@ function Cadastro() {
   }, []);
 
   return (
-    <body className={Styles.body}>
+    <div className={Styles.body}>
       <section className={Styles.areaCadastro}>
         <img src={Logo3DFlix} alt="Logo 3D Flix" />
 
@@ -72,7 +72,7 @@ function Cadastro() {
 
         <button id="botaoCadastro">Cadastrar</button>
       </section>
-    </body>
+    </div>
   );
 }
 

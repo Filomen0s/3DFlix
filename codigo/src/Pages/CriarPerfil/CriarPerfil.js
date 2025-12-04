@@ -8,8 +8,8 @@ const PROFILE_IMAGES = [
   "https://i.postimg.cc/W1HfCyHk/Sem-Titulo-2.png",
   "https://i.postimg.cc/Gm5SVf5s/Sem-Titulo-1.png",
   "https://i.postimg.cc/9QnNKknw/Sem-nome-(180-x-180-px).png",
-  "https://i.postimg.cc/kgphzHpv/Design-sem-nome-(2).png",
-  "https://i.postimg.cc/nhPwgWPq/Design-sem-nome-(2).jpg",
+  "https://i.postimg.cc/c1fMZgS7/foto-180x180.png",
+  "https://i.postimg.cc/SQc7q2hC/foto-180x180-(1).png",
 ];
 
 function CriarPerfil() {

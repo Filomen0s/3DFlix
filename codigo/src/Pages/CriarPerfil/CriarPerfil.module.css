@@ -23,13 +23,14 @@
 /* As imagens de perfil usam a variável --profile-size para manter consistência */
 .fotosPerfil img {
     width: var(--profile-size);
-    height: auto;
+    height: var(--profile-size);
     cursor: pointer;
     border-radius: 50%;
     border: solid 5px #fff;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .tituloNome {
